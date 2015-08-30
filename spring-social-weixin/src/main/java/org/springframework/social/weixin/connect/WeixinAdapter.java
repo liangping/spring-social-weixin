@@ -15,25 +15,19 @@
  */
 package org.springframework.social.weixin.connect;
 
-import org.springframework.social.ApiException;
 import org.springframework.social.connect.ApiAdapter;
 import org.springframework.social.connect.ConnectionValues;
 import org.springframework.social.connect.UserProfile;
 import org.springframework.social.weixin.api.Weixin;
 
 /**
- * Twitter ApiAdapter implementation.
- * @author Keith Donald
+ * Weixin ApiAdapter implementation.
+ * @author liangping
  */
 public class WeixinAdapter implements ApiAdapter<Weixin> {
 
 	public boolean test(Weixin weixin) {
-		try {
-			weixin.userOperations().getWeixinUser();
-			return true;
-		} catch (ApiException e) {
-			return false;
-		}
+		return weixin.getWeixinUser(null)!=null?true:false;			
 	}
 
 	public void setConnectionValues(Weixin weixin, ConnectionValues values) {
@@ -50,7 +44,7 @@ public class WeixinAdapter implements ApiAdapter<Weixin> {
 		return null;
 	}
 	
-	public void updateStatus(Weixin twitter, String message) {
+	public void updateStatus(Weixin weixin, String message) {
 		//twitter.timelineOperations().updateStatus(message);	
 	}
 	

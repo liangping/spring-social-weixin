@@ -17,7 +17,6 @@ package org.springframework.social.weixin.connect;
 
 import org.springframework.social.oauth2.AbstractOAuth2ServiceProvider;
 import org.springframework.social.oauth2.OAuth2Operations;
-import org.springframework.social.oauth2.OAuth2Template;
 import org.springframework.social.weixin.api.Weixin;
 import org.springframework.social.weixin.api.impl.WeixinTemplate;
 
@@ -32,15 +31,9 @@ public class WeixinServiceProvider<T> extends AbstractOAuth2ServiceProvider<Weix
 	}
 	
 	public WeixinServiceProvider(String appid, String appsecret){
-		super(getOAuth2Template(appid, appsecret));
-	}
-
-	private static OAuth2Template getOAuth2Template(String appid, String appsecret) {
-		OAuth2Template oAuth2Template = new OAuth2Template(appid, appsecret,
-			"https://open.weixin.qq.com/connect/qrconnect",
-			"https://api.weixin.qq.com/sns/oauth2/access_token");
-		oAuth2Template.setUseParametersForClientAuthentication(true);
-		return oAuth2Template;
+		super(new WeixinOAuth2Template(appid, appsecret,
+				"https://open.weixin.qq.com/connect/qrconnect",
+				"https://api.weixin.qq.com/sns/oauth2/access_token"));
 	}
 
 	@Override

@@ -24,7 +24,8 @@ import org.springframework.social.weixin.api.Weixin;
  */
 public class WeixinConnectionFactory extends OAuth2ConnectionFactory<Weixin> {
 
-	public WeixinConnectionFactory(String appid, String appsecret) {
+	
+	public WeixinConnectionFactory(String appid, String appsecret) {		
 		super("weixin", new WeixinServiceProvider<Weixin>(appid, appsecret), new WeixinAdapter());
 	}
 	

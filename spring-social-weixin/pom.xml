@@ -4,7 +4,18 @@
   <artifactId>spring-social-weixin</artifactId>
   <version>1.0.RELEASE</version>
   <build>
-    <sourceDirectory>src</sourceDirectory>
+    <sourceDirectory>src/main/java</sourceDirectory >  
+    <testSourceDirectory>src/test/java</testSourceDirectory >  
+    <resources>  
+       <resource>  
+          <directory>src/main/resources</directory>  
+       </resource>  
+    </resources>  
+    <testResources>  
+       <testResource>  
+          <directory>src/test/resources</directory>  
+       </testResource>  
+    </testResources>  
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -37,5 +48,27 @@
 	    <artifactId>spring-social-security</artifactId>
 	    <version>1.1.2.RELEASE</version>
 	</dependency>
+	<dependency>
+		<groupId>org.mockito</groupId>
+		<artifactId>mockito-all</artifactId>
+		<version>1.8.4</version>
+	</dependency>
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>javax.servlet-api</artifactId>
+	    <version>3.0.1</version>
+       	<scope>provided</scope>  
+	</dependency>
+			<!-- Logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.1.3</version>
+		</dependency>
   </dependencies>
 </project>

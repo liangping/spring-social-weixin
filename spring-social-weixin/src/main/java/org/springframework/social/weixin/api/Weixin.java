@@ -1,6 +1,7 @@
 package org.springframework.social.weixin.api;
 
 import org.springframework.social.ApiBinding;
+import org.springframework.social.weixin.api.bean.User;
 import org.springframework.social.weixin.api.operation.UserOperations;
 import org.springframework.web.client.RestOperations;
 
@@ -13,4 +14,6 @@ public interface Weixin extends ApiBinding {
 	RestOperations restOperations();
 	
 	UserOperations userOperations();
+	
+	User getWeixinUser(String openid);
 }

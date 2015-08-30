@@ -5,8 +5,8 @@
 	
 	<xs:element name="config">
 		<xs:complexType>
-			<xs:attribute name="app-id" use="required" type="xs:string" />
-			<xs:attribute name="app-secret" use="required" type="xs:string" />
+			<xs:attribute name="appid" use="required" type="xs:string" />
+			<xs:attribute name="appsecret" use="required" type="xs:string" />
 		</xs:complexType>
 	</xs:element>
 	
